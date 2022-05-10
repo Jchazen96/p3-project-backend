@@ -6,5 +6,9 @@ class Show < ActiveRecord::Base
         Character.create(name: name, image: image, age: age, show_id: self.id)
     end
 
+    def delete_char(character)
+        self.characters.destroy(character.id)
+
+    end
 
 end
