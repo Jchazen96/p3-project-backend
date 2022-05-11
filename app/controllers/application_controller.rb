@@ -36,4 +36,20 @@ class ApplicationController < Sinatra::Base
     networks.to_json(include: :shows)
   end
 
+  delete '/characters/:id' do
+    characters = Character.find(params[:id])
+    characters.destroy
+    characters.to_json
+  end
+
+  post '/characters' do
+    character = Character.create(
+      name: params[:name],
+      image: params[:image],
+      age: params[:age],
+      show_id: params[:show_id]
+    )
+    character.to_json
+  end 
+
 end
