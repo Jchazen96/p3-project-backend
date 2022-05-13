@@ -67,4 +67,14 @@ class ApplicationController < Sinatra::Base
     newShow.to_json
   end
 
+  patch '/characters/:id' do
+    character = Character.find(params[:id])
+    character.update(
+      name: params[:name],
+      image: params[:image],
+      age: params[:age]
+    )
+    character.to_json
+  end
+
 end
