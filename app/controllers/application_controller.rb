@@ -42,6 +42,12 @@ class ApplicationController < Sinatra::Base
     characters.to_json
   end
 
+  delete '/shows/:id' do
+    show = Show.find(params[:id])
+    show.destroy
+    show.to_json
+  end
+
   post '/characters' do
     character = Character.create(
       name: params[:name],
@@ -51,5 +57,14 @@ class ApplicationController < Sinatra::Base
     )
     character.to_json
   end 
+
+  post '/shows' do
+    newShow = Show.create(
+      name: params[:name],
+      image: params[:image],
+      network_id: params[:network_id]
+    )
+    newShow.to_json
+  end
 
 end

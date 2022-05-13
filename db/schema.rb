@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2022_05_10_134132) do
 
   create_table "shows", force: :cascade do |t|
     t.string "name"
+    t.string "image"
     t.integer "network_id"
   end
 

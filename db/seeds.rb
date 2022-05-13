@@ -6,11 +6,11 @@ nick = Network.create(name: "Nickelodeon")
 cn = Network.create(name: "Cartoon Network")
 
 puts "seeding shows"
-spongebob = Show.create(name: "Spongebob Squarepants", network_id: nick.id)
-dexter = Show.create(name: "Dexter's Laboratory", network_id: cn.id)
-jimmy = Show.create(name: "Jimmy Neutron", network_id: nick.id)
-danny = Show.create(name: "Danny Phantom", network_id: nick.id)
-teen_titans = Show.create(name: "Teen Titans", network_id: cn.id)
+spongebob = Show.create(name: "Spongebob Squarepants", image: 'https://m.media-amazon.com/images/M/MV5BNTk2NzEyNTQtZTQ5MS00MjAyLTgzMDMtNDNkYTBkM2M2OTU3XkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_.jpg', network_id: nick.id)
+dexter = Show.create(name: "Dexter's Laboratory", image:'https://i.ytimg.com/vi/Ya3Q9OLk25g/maxresdefault.jpg', network_id: cn.id)
+jimmy = Show.create(name: "Jimmy Neutron", image: 'https://static.wikia.nocookie.net/nickelodeon/images/9/9a/The_Adventures_of_Jimmy_Neutron_-_Boy_Genius.jpg', network_id: nick.id)
+danny = Show.create(name: "Danny Phantom", image: 'https://i1.sndcdn.com/artworks-000075452721-tfwvjj-t500x500.jpg', network_id: nick.id)
+teen_titans = Show.create(name: "Teen Titans", image: 'https://static.wikia.nocookie.net/teentitans/images/8/84/Theme_Song_%2841%29.jpg', network_id: cn.id)
 
 puts "seeding characters"
 spongebob_char = Character.create(name: "Spongebob Squarepants", image: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/640px-SpongeBob_SquarePants_character.svg.png", age: 35, show_id: spongebob.id)
